@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Stock</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <<h1>Editar Stock</h1>
+<p><%= producto.nombre %> — stock: <%= producto.stock %></p>
+
+    <form action="/inventario/editar/<%= producto.id %>" method="POST">
+      <label>Stock actual:</label>
+      <input type="number" name="stock" value="<%= producto.stock %>" required>
+      <br>
+      <button type="submit">Guardar</button>
+      <a href="/"><button type="button">Cancelar</button></a>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Registrar Venta</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Registrar Venta</h1>
+  <form action="/ventas" method="POST">
+    <label>Producto:</label>
+    <select name="producto_id" required>
+      <% productos.forEach(p => { %>
+        <option value="<%= p.id %>"><%= p.nombre %> (Stock: <%= p.stock %>)</option>
+      <% }) %>
+    </select><br><br>
+    
+    <label>Cantidad:</label>
+    <input type="number" name="cantidad" min="1" required><br><br>
+    
+    <button type="submit">Registrar Venta</button>
+  </form>
+
+  <div style="margin-top: 40px; text-align: center;">
+  <a href="/" class="volver-btn">← Volver</a>
+</div>
+
+
+</body>
+</html>

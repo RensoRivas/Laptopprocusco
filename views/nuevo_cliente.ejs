@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nuevo Cliente</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Registrar Nuevo Cliente</h1>
+  <form action="/clientes/nuevo" method="POST">
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required><br><br>
+
+    <label>Correo:</label><br>
+    <input type="email" name="correo" required><br><br>
+
+    <label>Teléfono:</label><br>
+    <input type="text" name="telefono" required><br><br>
+
+    <button type="submit">Guardar</button>
+  </form>
+<div style="margin-top: 40px; text-align: center;">
+  <a href="/" class="volver-btn">← Volver</a>
+</div>
+
+</body>
+</html>

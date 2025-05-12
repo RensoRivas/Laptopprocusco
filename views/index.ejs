@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Inventario - LaptopProCusco</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <h1>Inventario de Productos</h1>
+
+  <!-- 🔘 Botones de navegación -->
+  <div style="margin-bottom: 20px;">
+    <a href="/ventas"><button>Registrar Venta</button></a>
+    <a href="/clientes"><button>Ver Clientes</button></a>
+    <a href="/clientes/nuevo"><button>Nuevo Cliente</button></a>
+    <a href="/contacto"><button>Atención al Cliente</button></a>
+  </div>
+
+  <!-- 🧾 Tabla de productos -->
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Producto</th>
+      <th>Stock</th>
+      <th>Acciones</th>
+    </tr>
+    <% productos.forEach(p => { %>
+      <tr>
+        <td><%= p.id %></td>
+        <td>
+          <% if (p.imagen) { %>
+            <img src="/img/<%= p.imagen %>" class="producto-img" alt="producto">
+          <% } %>
+          <%= p.nombre %>
+        </td>
+        <td class="
+          <% if (p.stock <= 0) { %> stock-rojo 
+          <% } else if (p.stock <= 5) { %> stock-naranja 
+          <% } else { %> stock-normal 
+          <% } %>">
+          <%= p.stock %>
+        </td>
+        <td>
+          <a href="/inventario/editar/<%= p.id %>">
+            <button>Editar</button>
+          </a>
+        </td>
+      </tr>
+    <% }); %>
+  </table>
+
+  <!-- 👤 Sesión -->
+  <div style="text-align: right; margin-top: 20px;">
+    <% if (typeof session !== 'undefined' && session.usuario) { %>
+      <span>Bienvenido, <%= session.usuario %> (<%= session.rol %>)</span>
+      <a href="/logout"><button>Cerrar sesión</button></a>
+    <% } else { %>
+      <a href="/login"><button>Iniciar Sesión</button></a>
+    <% } %>
+  </div>
+
+</body>
+</html>

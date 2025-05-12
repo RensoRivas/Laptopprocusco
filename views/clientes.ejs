@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clientes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Lista de Clientes</h1>
+
+  <div class="acciones-clientes">
+  <a href="/clientes/nuevo" class="btn-agregar">+ Agregar Cliente</a>
+</div>
+
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Nombre</th>
+    <th>Correo</th>
+    <th>Teléfono</th>
+    <th>Acciones</th>
+  </tr>
+  <% clientes.forEach(c => { %>
+    <tr>
+      <td><%= c.id %></td>
+      <td><%= c.nombre %></td>
+      <td><%= c.correo %></td>
+      <td><%= c.telefono %></td>
+      <td>
+        <a href="/clientes/eliminar/<%= c.id %>" onclick="return confirm('¿Estás seguro de eliminar este cliente?');">
+          <button style="background-color: #dc3545;">Eliminar</button>
+        </a>
+      </td>
+    </tr>
+  <% }); %>
+</table>
+
+
+<div style="margin-top: 40px; text-align: center;">
+  <a href="/" class="volver-btn">← Volver</a>
+</div>
+
+</body>
+</html>

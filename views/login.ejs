@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iniciar Sesión</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <form action="/login" method="POST">
+    <h1>Iniciar Sesión</h1>
+    <% if (error) { %>
+      <p style="color:red;"><%= error %></p>
+    <% } %>
+    <input type="text" name="usuario" placeholder="Usuario" required>
+    <input type="password" name="contrasena" placeholder="Contraseña" required>
+    <button type="submit">Entrar</button>
+  </form>
+</body>
+</html>

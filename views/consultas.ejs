@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consultas de Clientes</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Mensajes Recibidos</h1>
+  <table>
+    <tr><th>Fecha</th><th>Nombre</th><th>Correo</th><th>Mensaje</th></tr>
+    <% consultas.forEach(c => { %>
+      <tr>
+        <td><%= c.fecha.toLocaleString() %></td>
+        <td><%= c.nombre %></td>
+        <td><%= c.correo %></td>
+        <td><%= c.mensaje %></td>
+      </tr>
+    <% }); %>
+  </table>
+</body>
+</html>

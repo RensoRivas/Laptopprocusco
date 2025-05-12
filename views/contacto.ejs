@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Atención al Cliente</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <h1>Atención al Cliente</h1>
+  <% if (req.query.enviado) { %>
+    <p style="color: green;">Tu mensaje fue enviado correctamente.</p>
+  <% } %>
+  <form action="/contacto" method="POST">
+    <label>Nombre:</label><br>
+    <input type="text" name="nombre" required><br><br>
+
+    <label>Correo:</label><br>
+    <input type="email" name="correo" required><br><br>
+
+    <label>Mensaje:</label><br>
+    <textarea name="mensaje" required></textarea><br><br>
+
+    <button type="submit">Enviar</button>
+  </form>
+</body>
+</html>
